@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="max-width:700px; margin:0 auto;">
+    <h2>{% if form.instance.pk %}Edit Article{% else %}Create New Article{% endif %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div style="margin-bottom:20px;">
+                <label>{{ field.label }}</label>
+                {{ field }}
+                <small style="color:#999;">{{ field.help_text }}</small>
+            </div>
+        {% endfor %}
+        <button type="submit" class="primary">Submit Article</button>
+    </form>
+</div>
+{% endblock %}

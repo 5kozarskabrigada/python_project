@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="card">
+    <div class="post-meta">
+        {% if post.author.avatar %}
+            <img src="{{ post.author.avatar.url }}" class="avatar-small">
+        {% endif %}
+        <b>{{ post.author.username }}</b> • {{ post.created_at|date:"d M" }}
+    </div>
+    
+    <h1>{{ post.title }}</h1>
+    <div style="font-size: 18px; line-height: 1.8;">{{ post.content|linebreaks }}</div>
+
+    <!-- Inside post_detail.html -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; border-top:1px solid #eee; padding-top:20px;">
+    <div>
+        Rating: <strong id="rating-display" style="font-size:24px;">{{ post.rating }}</strong>
+    </div>
+
+    <div class="actions">
+        {% if user.is_authenticated %}
+            <button id="bookmark-btn" data-pk="{{ post.pk }}" class="btn-outline">
+                🔖 Bookmark
+            </button>
+
+            <button class="rate-btn" data-pk="{{ post.pk }}" data-value="1" style="background:#e8f5e9; border:none; padding:10px; border-radius:50%; cursor:pointer;">👍</button>
+            <button class="rate-btn" data-pk="{{ post.pk }}" data-value="0" style="background:#ffebee; border:none; padding:10px; border-radius:50%; cursor:pointer;">👎</button>
+        {% endif %}
+    </div>
+</div>
+</article>
+{% endblock %}

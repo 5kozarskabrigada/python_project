@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 style="border:none;">{% if view.kwargs.slug %}Category: {{ view.kwargs.slug }}{% else %}All Articles{% endif %}</h2>
+
+    {% for post in posts %}
+    <div class="post-item">
+        <div class="post-meta">
+            <span>By <strong>{{ post.author.username }}</strong></span> • 
+            <span>{{ post.created_at|date:"d M" }}</span> • 
+            <a href="{% url 'category_posts' post.category.slug %}" class="tag">{{ post.category.name }}</a>
+        </div>
+        <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+        <p style="color:#444;">{{ post.content|striptags|truncatechars:200 }}</p>
+        <div class="post-meta">
+            Rating: <b style="color:var(--habr-blue);">{{ post.rating }}</b>
+        </div>
+    </div>
+    {% empty %}
+        <div class="card"><p>No articles found yet.</p></div>
+    {% endfor %}
+{% endblock %}

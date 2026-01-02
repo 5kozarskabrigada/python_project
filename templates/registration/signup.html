@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Join Habr Clone{% endblock %}
+
+{% block content %}
+<div style="max-width: 450px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; border: none; margin-bottom: 30px;">Registration</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 600; color: #444; display: block; margin-bottom: 8px;">
+                    {{ field.label }}
+                </label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: #999; font-size: 11px; display: block; margin-top: 5px;">
+                        {{ field.help_text|safe }}
+                    </small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: #d9534f; font-size: 12px; margin: 5px 0 0 0;">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" style="width: 100%; padding: 14px; font-size: 16px; margin-top: 10px;">
+            Create Account
+        </button>
+    </form>
+    
+    <p style="text-align: center; margin-top: 25px; color: #777; font-size: 14px;">
+        Already have an account? <a href="{% url 'login' %}" style="color: #548eaa; font-weight: bold;">Log in</a>
+    </p>
+</div>
+{% endblock %}

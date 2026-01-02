@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 style="border:none;">Our Authors</h2>
+    <div class="author-grid">
+        {% for author in authors %}
+        <div class="card" style="text-align:center; padding:20px;">
+            <div style="width:60px; height:60px; background:var(--habr-blue); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; font-size:24px; font-weight:bold;">
+                {{ author.username|first|upper }}
+            </div>
+            <h3 style="margin:0;">{{ author.username }}</h3>
+            <p style="color:#777; font-size:13px;">{{ author.role }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

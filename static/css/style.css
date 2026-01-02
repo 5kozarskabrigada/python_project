@@ -1,0 +1,205 @@
+:root {
+    --habr-blue: #548eaa;
+    --habr-bg: #f0f2f5;
+    --habr-text: #222;
+    --habr-gray: #777;
+    --habr-light-gray: #e6e9ed;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body {
+    background-color: var(--habr-bg);
+    color: var(--habr-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.auth-card {
+    background: #fff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.auth-card h2 { margin-bottom: 30px; border: none; font-size: 24px; }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: #fff;
+    padding: 12px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: var(--habr-blue);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+nav a, nav button {
+    color: #444;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover { 
+    color: var(--habr-blue); }
+
+main { 
+    margin-top: 30px; 
+    margin-bottom: 50px; 
+}
+
+.card { 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+}
+
+.post-item { 
+    background: #fff; 
+    padding: 20px; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+}
+
+.avatar-small { 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    vertical-align: middle; 
+    margin-right: 5px; 
+    object-fit: cover; 
+}
+
+.avatar-large { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px; 
+    border: 3px solid #fff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+.post-item:hover { 
+    transform: translateY(-2px); 
+}
+
+.post-item h3 { 
+    margin: 0 0 10px 0; 
+    font-size: 22px; 
+}
+.post-item h3 a { 
+    color: #000; 
+    text-decoration: none; 
+}
+.post-item h3 a:hover { 
+    color: var(--habr-blue); 
+}
+
+.post-meta {
+    font-size: 13px;
+    color: var(--habr-gray);
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: var(--habr-light-gray);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #555;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.auth-card { 
+    max-width: 450px; 
+    margin: 40px auto; 
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+button.primary {
+    background: var(--habr-blue);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.auth-card input, .auth-card textarea, .auth-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background: var(--habr-blue);
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+
+.avatar-large {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
